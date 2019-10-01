@@ -17,9 +17,22 @@ pet_1 = Pet('Breezy', 'Kojo', 'doberman')
 pet_2 = Pet('Ulysses Harver', 'Botamian', 'shitsu' )
 pet_3 = Pet('Abigail Ohora', 'Dennis', 'Golden retriever')
 pet_4 = Pet('Montgomery Huggins', "Badu", 'Pug')
-pet_5 = Pet("Carang Teng", 'princess', 'chow chow')
+pet_5 = Pet("Carang Teng", 'Princess', 'chow chow')
 
 pet_list = [pet_1, pet_2, pet_3, pet_4, pet_5]
+
+pet_name_list = [pet_1.d_name , pet_1.d_owner, pet_1.d_breed, pet_2.d_name, pet_2.d_owner, pet_2.d_breed, pet_3.d_name, pet_3.d_owner, pet_3.d_breed,  pet_4.d_name, pet_4.d_owner,
+                  pet_4.d_breed, pet_5.d_name, pet_5.d_owner, pet_5.d_breed]
+
+# pet_dict = {
+#     pet_1 : [pet_1.d_name, pet_1.d_owner, pet_1.d_breed],
+#     pet_2 : [pet_2.d_name, pet_2.d_owner, pet_2.d_breed],
+#     pet_3 : [pet_3.d_name, pet_3.d_owner, pet_3.d_breed],
+#     pet_4 : [pet_4.d_name, pet_4.d_owner, pet_4.d_breed],
+#     pet_5 : [pet_5.d_name, pet_5.d_owner, pet_5.d_breed],
+#
+#
+# }
 
 # Create Vets
 
@@ -43,10 +56,10 @@ print('\n')
 # #Appointment list for each vet
 
 
-#Appointment list for each vet
-for vet in range(len(vet_list)):
-    print(f'Vet : {vet + 1}')
-    vet_list[vet].list_appointment()
+# #Appointment list for each vet
+# for vet in range(len(vet_list)):
+#     print(f'Vet : {vet + 1}')
+#     vet_list[vet].list_appointment()
 
 
 # Each appointment
@@ -80,6 +93,68 @@ for vet in range(len(vet_list)):
 # print(pet_3.get_pet_info())
 # print(pet_4.get_pet_info())
 # print(pet_5.get_pet_info())
+
+receptionist_input = input("Hello, can I be of assistance?")
+
+while receptionist_input != 'no':
+    receptionist_input1 = input("\n What can I do for you today: ")
+
+    if 'please' not in receptionist_input1:
+        print("Ummmmmmmm looks like you're missing a special word there")
+
+
+    elif 'register my pet please' in receptionist_input1:
+
+        owner_name = input("There we go, can I have your name please?: ")
+        pet_name = input("perfect, and the name of that beautiful creature?: ")
+        pet_breed = input("and finally their breed?: ")
+
+        pet_6 = Pet(owner_name, pet_name, pet_breed)
+
+
+        pet_name_list.append(pet_6.d_name)
+        pet_name_list.append(pet_6.d_owner)
+        pet_name_list.append(pet_6.d_breed)
+
+
+        print(f" pet 1 : Pet - {pet_name_list[0]},      Owner - {pet_name_list[1]}, Pet Breed - {pet_name_list[2]} \n"
+              f" pet 2 : Pet - {pet_name_list[3]},  Owner - {pet_name_list[4]}, Pet Breed - {pet_name_list[5]} \n"
+              f" pet 3 : Pet - {pet_name_list[6]},    Owner - {pet_name_list[7]}, Pet Breed - {pet_name_list[8]} \n"
+              f" pet 4 : Pet - {pet_name_list[9]},      Owner - {pet_name_list[10]}, Pet Breed - {pet_name_list[11]} \n"
+              f" pet 5 : Pet - {pet_name_list[12]},  Owner - {pet_name_list[13]}, Pet Breed - {pet_name_list[14]} \n"
+              f" pet 6 : Pet - {pet_name_list[15]},      Owner - {pet_name_list[16]}, Pet Breed - {pet_name_list[17]} \n")
+
+        receptionist_input2 = input("Can i do anything else for you today?")
+        if  'thanks' not in receptionist_input2:
+            print("Wooooow, you just don't learn do you? No manners. Please leave thankyou ")
+            break
+
+        else:
+            print(f"Ok, well goodbye {pet_name_list[16]}, and byeeeee {pet_name_list[15]} you beautiful beast you")
+            break
+
+
+
+
+    elif 'nothing' in receptionist_input1:
+        break
+
+    else:
+        break
+
+else:
+    print('Ok, have an amazing day')
+
+
+
+
+
+
+
+
+
+
+
 
 
 
